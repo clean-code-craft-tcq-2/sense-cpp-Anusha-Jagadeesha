@@ -8,14 +8,17 @@ namespace Statistics {
         float average;
     };
     Stats ComputeStatistics(const std::vector<float>& senseData);
-
-    struct EmailAlert 
-    {
-        bool emailSent;
-    };
-
-    struct LEDAlert 
-    {
-        bool ledGlows;
-    };
 }
+    
+    struct IAlerter
+    {
+        struct EmailAlert 
+        {
+            bool emailSent;
+        };
+
+        struct LEDAlert 
+        {
+            bool ledGlows;
+        };
+    };
