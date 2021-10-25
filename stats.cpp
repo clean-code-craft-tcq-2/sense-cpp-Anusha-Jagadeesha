@@ -1,5 +1,7 @@
 #include "stats.h"
-#include <cmath>
+#include "math.h"
+#include <bits/stdc++.h>
+using namespace std;
 
 Stats Statistics::ComputeStatistics(const std::vector<float>& senseData) {
     //Implement statistics here
