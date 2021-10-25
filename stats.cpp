@@ -24,14 +24,14 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& senseData) {
             computedStats.max = (senseData[It] > computedStats.max) ? senseData[It] : computedStats.max;
             sum = sum + senseData[It];
         }
-        computedStats.average = sum / vector.size();
+        computedStats.average = sum / senseData.size();
     }
     return computedStats;
 }
 
 void StatsAlerter::checkAndAlert(const std::vector<float>& Data)
 {
-    if(MaxThreshold > (*std::max_element(vector.begin(), vector.end())))
+    if(MaxThreshold > (*std::max_element(Data.begin(), Data.end())))
     {
         alerter[0]->emailSent = true;
         alerter[1]->ledGlows = true;
