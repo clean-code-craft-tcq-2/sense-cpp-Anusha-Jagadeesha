@@ -6,17 +6,17 @@ namespace Statistics {
     
     struct Stats
     {
-        float min;
-        float max;
-        float average;
+        float min = 0.0f;
+        float max = 0.0f;
+        float average = 0.0f;
     };
 
     class IAlerter
     {
         public:
         IAlerter(){}
-        bool emailSent;
-        bool ledGlows;
+        bool emailSent = false;
+        bool ledGlows = false;
     };
 
     class EmailAlert : public IAlerter
