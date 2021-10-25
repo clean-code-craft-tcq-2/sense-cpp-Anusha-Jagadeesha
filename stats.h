@@ -33,11 +33,10 @@ namespace Statistics {
 
     class StatsAlerter
     {
-        public:
-        StatsAlerter(){}
-        const float MaxThreshold = 0.0f;
-        std::vector<IAlerter*> alerter;
-        void checkAndAlert(const std::vector<float>&);
-        StatsAlerter(const float maxthreshold, std::vector<IAlerter*> Alerter) :
-                     MaxThreshold(maxthreshold), alerter(Alerter){}
+        public :
+                StatsAlerter(){}
+                StatsAlerter(const float Maxthreshold,std::vector<IAlerter*> Alerter): MaxThreshold(Maxthreshold),alerter(Alerter){}
+                const float MaxThreshold = 0.0f;
+                std::vector<IAlerter*> alerter;
+                void checkAndAlert(const std::vector<float>&);                  
     };

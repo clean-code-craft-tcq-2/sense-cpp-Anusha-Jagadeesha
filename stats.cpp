@@ -31,7 +31,7 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& senseData) {
 
 void StatsAlerter::checkAndAlert(const std::vector<float>& Data)
 {
-    if(maxThreshold > (*std::max_element(vector.begin(), vector.end())))
+    if(MaxThreshold > (*std::max_element(vector.begin(), vector.end())))
     {
         alerter[0]->emailSent = true;
         alerter[1]->ledGlows = true;
