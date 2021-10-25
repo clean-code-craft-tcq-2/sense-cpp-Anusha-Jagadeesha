@@ -16,7 +16,7 @@ TEST_CASE("reports average, minimum and maximum") {
 
 TEST_CASE("average is NaN for empty array") {
     auto computedStats = Statistics::ComputeStatistics({});
-    REQUIRE(std::abs(computedStats.average) == NAN);
+    REQUIRE(isnan(computedStats.average));
     REQUIRE(std::abs(computedStats.max) == NAN);
     REQUIRE(std::abs(computedStats.min) == NAN);
 }
