@@ -1,7 +1,7 @@
 #include <vector>
 
 namespace Statistics {
-    Stats ComputeStatistics(const std::vector<float>& senseData);
+    Stats ComputeStatistics(const std::vector<float>&);
 }
     
     struct Stats
