@@ -20,7 +20,7 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& senseData) {
         {
             sum = sum + *It;
         }
-        computedStats.min = *std::max_element(senseData.begin(), senseData.end());
+        computedStats.min = *std::min_element(senseData.begin(), senseData.end());
         computedStats.max = *std::max_element(senseData.begin(), senseData.end());
         computedStats.average = sum / senseData.size();
     }
