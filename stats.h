@@ -1,8 +1,4 @@
 #include <vector>
-
-namespace Statistics {
-    Stats ComputeStatistics(const std::vector<float>&);
-}
     
     struct Stats
     {
@@ -40,3 +36,7 @@ namespace Statistics {
                 std::vector<IAlerter*> alerter;
                 void checkAndAlert(const std::vector<float>&);                  
     };
+
+namespace Statistics {
+    Stats ComputeStatistics(const std::vector<float>&);
+}
