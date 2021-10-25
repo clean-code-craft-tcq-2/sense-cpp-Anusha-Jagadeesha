@@ -14,16 +14,14 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& senseData) {
     }
     else
     {
-        computedStats.min = senseData[0];
-        computedStats.max = senseData[0];
         float sum = 0.0;
         auto It = senseData.begin();
         for(; It <= senseData.end(); It++) 
         {
-            computedStats.min = (senseData[It] < computedStats.min) ? senseData[It] : computedStats.min;
-            computedStats.max = (senseData[It] > computedStats.max) ? senseData[It] : computedStats.max;
-            sum = sum + senseData[It];
+            sum = sum + *It;
         }
+        computedStats.min = *std::max_element(senseData.begin(), senseData.end());
+        computedStats.max = *std::max_element(senseData.begin(), senseData.end());
         computedStats.average = sum / senseData.size();
     }
     return computedStats;
