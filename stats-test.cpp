@@ -27,7 +27,7 @@ TEST_CASE("raises alerts when max is greater than threshold") {
     
     const float maxThreshold = 10.2;
     StatsAlerter statsAlerter(maxThreshold, alerters);
-    statsAlerter.checkAndAlert({99.8, 34.2, 4.5, 6.7});
+    statsAlerter.checkAndAlert{99.8, 34.2, 4.5, 6.7};
 
     REQUIRE(emailAlert.emailSent);
     REQUIRE(ledAlert.ledGlows);

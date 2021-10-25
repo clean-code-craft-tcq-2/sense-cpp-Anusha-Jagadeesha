@@ -26,3 +26,17 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& senseData) {
     }
     return computedStats;
 }
+
+void StatsAlerter::checkAndAlert(const std::vector<float>& Data)
+{
+    if(MaxThreshol > (*std::max_element(vect.begin(), vect.end()))
+    {
+        alerter[0]->emailSent = true;
+        alerter[1]->ledGlows = true;
+    }
+    else
+    {
+        alerter[0]->emailSent = false;
+        alerter[1]->ledGlows = false;
+    }
+}

@@ -10,18 +10,33 @@ namespace Statistics {
     Stats ComputeStatistics(const std::vector<float>& senseData);
 }
 
-    struct EmailAlert 
+    class IAlerter
     {
+        public:
+        IAlerter(){}
         bool emailSent;
-    };
-
-    struct LEDAlert 
-    {
         bool ledGlows;
     };
 
-    struct IAlerter
+    class EmailAlert : public IAlerter
     {
-        EmailAlert &emailAlert;
-        LEDAlert &ledAlert;
+        public:
+        EmailAlert(){}
+    };
+
+    class LEDAlert : public IAlerter
+    {
+        public:
+        LEDAlert(){}
+    };
+
+    class StatsAlerter
+    {
+        public:
+        StatsAlerter(){}
+        const float maxThreshold = 0.0f;
+        std::vector<IAlerter*> alerter;
+        void checkAndAlert(const std::vector<float>&);
+        StatsAlerter(const float maxthreshold, std::vector<IAlerter*> Alerter) :
+                     maxThreshold(maxthreshold), alerter(Alerter){}
     };
